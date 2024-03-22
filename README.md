@@ -232,6 +232,25 @@ Our baseline model uses a KNN Classifier with a OneHotEncoded `side` and `pick1`
 
 ## Final Model
 
+For our final model, I selected `pick4`, `pick5`, `side`, `patch`, and `teamname` to be my parameters. I only chose `pick4` and `pick5` to avoid multicollinearity and to reduce noise. I chose `teamname` because teams that are historically better should win more, and `side` because it influences strategy. `Patch` is also important, since champion strength and playstyle are affected by each update. 
 
+
+I OneHotEncoded all of these variables, since they are all nominal. I considered an ordinal encoding for `patch` but decided against it because gaps between patches should not be consistent, since there are routinely big and small updates, along with new seasons. 
+
+
+Additionally, I transformed all my variables with MCA, a dimensionality reduction technique for categorical variables. I did this by OneHotEncoding my variables, subtracting the column-wise mean, then applying SVD. I found the dimensions that would let me keep around 95% of the variance in the original dataset.
+
+I originally stuck with my KNN Classifier, tuning its hyperparameters to give me the best result. 
+
+<iframe
+  src="assets/grid_search_heatmap.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+However, I found that Support Vector Classification(SVC) gave me a better result out of all the models I fitted. I fit it with the regularization parameter of 1.1 and I got an accuracy of 0.5952799397439116. I attempted to run GridSearch on it, but unfortunately I don't have a system powerful enough to run it. Still, its an improvement over my baseline model by nearly 10 percent.
 
 ## Fairness Analysis
+
+
