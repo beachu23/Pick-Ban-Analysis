@@ -1,6 +1,7 @@
 # Pick-Ban-Analysis
 
 ## Introduction
+Our dataset is on all professional League of Legends games in 2022 from Oracle's Elixir. Our dataset has 15 columns and 148992 rows, with 12 games per row. 10 of these rows contain player data, while the two rows beneath contain overall team data. The column names are `gameid`, `teamname`, `side`, `ban1`, `ban2`, `ban3`, `ban4`, `ban5`,`pick1`, `pick2`, `pick3`, `pick4`, `pick5`, `league`, `patch`, and `result`.
 
 ## Data Cleaning and Exploratory Data Analysis
 
