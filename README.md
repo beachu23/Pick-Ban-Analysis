@@ -5,7 +5,7 @@
 ## Data Cleaning and Exploratory Data Analysis
 
 <iframe
-  src="assets/avg_pick_order_by_pos.html"
+  src="assets/avg_pick_order_by_pos"
   width="800"
   height="600"
   frameborder="0"
