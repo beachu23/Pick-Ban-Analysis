@@ -76,7 +76,7 @@ The transposed head of the dataframe:
 ></iframe>
 
 
-Barplot of the average pick order by position generated with some dataframe manipulation. We can see that adc and jg are typically picked the earliest, followed by support, mid, and top. 
+Barplot of the average pick order by position generated with some dataframe manipulation. It looks like Adc and Jg are typically picked the earliest, followed by Support, Mid, and Top. 
 
 
 **Bivariate Analysis**
@@ -89,7 +89,12 @@ Barplot of the average pick order by position generated with some dataframe mani
 ></iframe>
 
 
-Distribution of Pick Orders by Position of Winning vs. Losing teams, visualized by a Box and Whisker plot. We can see that winning teams have a higher Q1, making more of their data centered around a later pick order for Top. 
+Distribution of Pick Orders by Position of Winning vs. Losing teams, visualized by a Box and Whisker plot. It looks like winning teams have a higher Q1, making more of their data centered around a later pick order for Top. 
+
+
+**Interesting Aggregates**
+
+
 
 | result | top      | jg       | adc      | mid      | sup      |
 |--------|----------|----------|----------|----------|----------|
@@ -97,10 +102,41 @@ Distribution of Pick Orders by Position of Winning vs. Losing teams, visualized 
 | 1      | 1.052280 | 0.801930 | 1.015668 | 1.241115 | 0.733817 |
 
 
-**Interesting Aggregates**
+This aggregate shows the average number of bans each role recieves in champ select for winning versus losing teams. It appears as if Top is banned out less in winning teams, while Jg and Adc are banned out more.
 
 
 ## Assessment of Missingness
+
+
+I believe that many columns in this dataset are Not Missing At Random (NMAR). For example, all 3 bans are missing for many of the rows yet still contain team data, making it unlikely that the reason for its missingness can be explained by design(MD). Additionally, data is missing in chunks in the dataset, making it unlikely that the missingness is Missing Completely at Random(MCAR) and likely that it's dependent on the type of column the data is stored in.
+
+
+Additional data that would make bans Missing at Random(MAR) can be collected from the `league` column. Smaller leagues should have more missing data. For simplicity, I used `ban1` as my column of interest. I plotted an Empirical Distribution of TVDs found through shuffling the `ban1` column under the assumption that missingness of `ban1` is not dependent on `league`. 
+
+
+<iframe
+  src="assets/TVDs_ban_vs_league.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+
+p-value: 0.000
+
+**Missingness of `ban1` is dependent on `league`.**
+
+
+
+<iframe
+  src="assets/TVDs_ban_vs_side.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+**Missingness of `ban1` does not depend on `side`.**
+
 
 ## Hypothesis Testing
 
