@@ -228,7 +228,7 @@ My prediction problem is to determine the result of the game strictly from pre-g
 
 ## Baseline Model
 
-Our baseline model uses a KNN Classifier with a OneHotEncoded `side` and `pick1` variable. These are both nominal variables. Our model achieved an accuracy of 0.511, which isn't good and is barely better than guessing. 
+Our baseline model uses a KNN Classifier with a OneHotEncoded `side` and `pick1` variable. These are both nominal variables. Our model achieved an accuracy of **0.511**, which isn't good and is barely better than guessing. 
 
 ## Final Model
 
@@ -240,7 +240,7 @@ I OneHotEncoded all of these variables, since they are all nominal. I considered
 
 Additionally, I transformed all my variables with MCA, a dimensionality reduction technique for categorical variables. I did this by OneHotEncoding my variables, subtracting the column-wise mean, then applying SVD. I found the dimensions that would let me keep around 95% of the variance in the original dataset.
 
-I originally stuck with my KNN Classifier, tuning its hyperparameters to give me the best result. 
+I originally stuck with my KNN Classifier, tuning its hyperparameters to give me the best result. I got a final accuracy of **0.535**.
 
 <iframe
   src="assets/grid_search_heatmap.html"
@@ -249,7 +249,7 @@ I originally stuck with my KNN Classifier, tuning its hyperparameters to give me
   frameborder="0"
 ></iframe>
 
-However, I found that Support Vector Classification(SVC) gave me a better result out of all the models I fitted. I fit it with the regularization parameter of 1.1 and I got an accuracy of 0.5952799397439116. I attempted to run GridSearch on it, but unfortunately I don't have a system powerful enough to run it. Still, its an improvement over my baseline model by nearly 10 percent.
+However, I found that Support Vector Classification(SVC) gave me a better result out of all the models I fitted. I fit it with the regularization parameter of 1.1 and I got an accuracy of **0.595**. I attempted to run GridSearch on it, but unfortunately I don't have a system powerful enough to run it. Still, its an improvement over my baseline model by nearly 10 percent.
 
 ## Fairness Analysis
 
