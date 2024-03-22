@@ -111,7 +111,7 @@ This aggregate shows the average number of bans each role recieves in champ sele
 I believe that many columns in this dataset are Not Missing At Random (NMAR). For example, all 3 bans are missing for many of the rows yet still contain team data, making it unlikely that the reason for its missingness can be explained by design(MD). Additionally, data is missing in chunks in the dataset, making it unlikely that the missingness is Missing Completely at Random(MCAR) and likely that it's dependent on the type of column the data is stored in.
 
 
-Additional data that would make bans Missing at Random(MAR) can be collected from the `league` column. Smaller leagues should have more missing data. For simplicity, I used `ban1` as my column of interest. I plotted an Empirical Distribution of TVDs found through shuffling the `ban1` column under the assumption that missingness of `ban1` is not dependent on `league`. 
+Additional data that would make bans Missing at Random(MAR) can be collected from the `league` column. Smaller leagues should have more missing data. For simplicity, I used `ban1` as my column of interest. I plotted an Empirical Distribution of TVDs found through shuffling the `ban1` column under the assumption that missingness of `ban1` is not dependent on `league`. Our 
 
 
 <iframe
@@ -124,8 +124,11 @@ Additional data that would make bans Missing at Random(MAR) can be collected fro
 
 p-value: 0.000
 
+
 **Missingness of `ban1` is dependent on `league`.**
 
+
+The same test done on `side`.
 
 
 <iframe
@@ -135,10 +138,83 @@ p-value: 0.000
   frameborder="0"
 ></iframe>
 
+
+p-value: 0.124
+
+
+
 **Missingness of `ban1` does not depend on `side`.**
 
 
 ## Hypothesis Testing
+
+I conducted 5 separate hypothesis tests, one for each role. I wanted to see if the difference in ban average number of bans between winning and losing teams that I found in my EDA could be explained by chance. 
+
+**Null Hypothesis**: The average number of bans for each role is the same between winning and losing teams
+
+**Alternate Hypothesis**: The average number of bans for each role is different between winning and losing teams
+
+**Test Statistic**: The difference in means 
+
+
+I chose to use the difference in means because there are two populations at interest–winning and losing teams. 
+
+
+**Significance Level**: 0.05
+
+
+I chose 0.05 because it is the most common threshold for hypothesis tests.
+
+
+<iframe
+  src="assets/permutated_differences_top.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+p-value : 0.0071
+
+
+<iframe
+  src="assets/permutated_differences_jg.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+p-value : 0.0
+
+
+<iframe
+  src="assets/permutated_differences_mid.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+p-value : 0.4776
+
+
+<iframe
+  src="assets/permutated_differences_adc.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+p-value : 0.0009
+
+
+<iframe
+  src="assets/permutated_differences_sup.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
+p-value : 0.2218
+
 
 ## Framing a Prediction Problem
 
