@@ -67,6 +67,7 @@ The transposed head of the dataframe:
 
 **Univariate Analysis**
 
+
 <iframe
   src="assets/avg_pick_order_by_pos.html"
   width="800"
@@ -74,7 +75,11 @@ The transposed head of the dataframe:
   frameborder="0"
 ></iframe>
 
+
 Barplot of the average pick order by position generated with some dataframe manipulation. We can see that adc and jg are typically picked the earliest, followed by support, mid, and top. 
+
+
+**Bivariate Analysis**
 
 <iframe
   src="assets/pick_order_by_pos_win_vs_loss.html"
@@ -83,10 +88,17 @@ Barplot of the average pick order by position generated with some dataframe mani
   frameborder="0"
 ></iframe>
 
+
+Distribution of Pick Orders by Position of Winning vs. Losing teams, visualized by a Box and Whisker plot. We can see that winning teams have a higher Q1, making more of their data centered around a later pick order for Top. 
+
 | result | top      | jg       | adc      | mid      | sup      |
 |--------|----------|----------|----------|----------|----------|
 | 0      | 1.085124 | 0.741736 | 1.058099 | 1.250579 | 0.720248 |
 | 1      | 1.052280 | 0.801930 | 1.015668 | 1.241115 | 0.733817 |
+
+
+**Interesting Aggregates**
+
 
 ## Assessment of Missingness
 
