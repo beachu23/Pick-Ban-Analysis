@@ -148,7 +148,7 @@ p-value: 0.124
 
 ## Hypothesis Testing
 
-I conducted 5 separate hypothesis tests, one for each role. I wanted to see if the difference in ban average number of bans between winning and losing teams that I found in my EDA could be explained by chance. 
+I conducted 5 separate permutation tests, one for each role. I wanted to see if the difference in ban average number of bans between winning and losing teams that I found in my EDA could be explained by chance. 
 
 **Null Hypothesis**: The average number of bans for each role is the same between winning and losing teams
 
@@ -164,6 +164,12 @@ I chose to use the difference in means because there are two populations at inte
 
 
 I chose 0.05 because it is the most common threshold for hypothesis tests.
+
+
+**p-value**: 0.0071(top), 0.0000(jg),  0.4776(mid), 0.0009(adc), 0.2218(sup)
+
+
+**Conclusion**: We reject the null hypothesis for Top, Jg, and Adc. We don't believe average number of bans for these roles for winning teams come from the same distribution as losing teams. We fail to reject the null hypothesis for Mid and Sup.
 
 
 <iframe
@@ -183,7 +189,7 @@ p-value : 0.0071
   frameborder="0"
 ></iframe>
 
-p-value : 0.0
+p-value : 0.0000
 
 
 <iframe
