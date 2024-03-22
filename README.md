@@ -224,8 +224,14 @@ p-value : 0.2218
 
 ## Framing a Prediction Problem
 
+My prediction problem is to determine the result of the game strictly from pre-game information. This is a binary classification problem, as I'll need to predict the response variable: either a win(1) or a loss(0). I'll use the KNNClassifier provided by Sci-kit learn as our base model. Additionally, I'll use accuracy as my scoring metric since false positives and false negatives don't make a difference.
+
 ## Baseline Model
 
+Our baseline model uses a KNN Classifier with a OneHotEncoded `side` and `pick1` variable. These are both nominal variables. Our model achieved an accuracy of 0.511, which isn't good and is barely better than guessing. 
+
 ## Final Model
+
+
 
 ## Fairness Analysis
