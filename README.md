@@ -253,4 +253,38 @@ However, I found that Support Vector Classification(SVC) gave me a better result
 
 ## Fairness Analysis
 
+Permutation Test
+
+CBLOL is a smaller region known for their unconventional picks. We'd like to find out if our model is fair for them.
+
+
+**Group X**: CBLOL games
+
+
+**Group Y**: Rest of games
+
+
+**Null Hypothesis**: The accuracy score is the same for CBLOL as the rest of the data
+
+
+**Alternate Hypothesis**: The accuracy score is different for CBLOL as the rest of the data
+
+
+**Evaluation metric**: absolute difference in accuracy score
+
+
+**Test statistic**: absolute difference
+
+
+**Significance level**: 0.05
+
+
+**p-value**: 0.0004
+
+We reject the null hypothesis. 
+
+
+
+
+
 
