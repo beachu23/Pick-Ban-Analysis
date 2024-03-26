@@ -235,7 +235,7 @@ Our baseline model uses a KNN Classifier with a OneHotEncoded `side` and `pick1`
 For our final model, I selected `pick4`, `pick5`, `side`, `patch`, and `teamname` to be my parameters. I only chose `pick4` and `pick5` to avoid multicollinearity and to reduce noise. I chose `teamname` because teams that are historically better should win more, and `side` because it influences strategy. `Patch` is also important, since champion strength and playstyle are affected by each update. 
 
 
-I OneHotEncoded all of these variables, since they are all nominal. I considered an ordinal encoding for `patch` but decided against it because gaps between patches should not be consistent, since there are routinely big and small updates, along with new seasons. 
+I One-Hot Encoded all of these variables, since they are all nominal. I considered an ordinal encoding for `patch` but decided against it because gaps between patches should not be consistent, since there are routinely big and small updates, along with new seasons. 
 
 
 Additionally, I transformed all my variables with MCA, a dimensionality reduction technique for categorical variables. I did this by OneHotEncoding my variables, subtracting the column-wise mean, then applying SVD. I found the dimensions that would let me keep around 95% of the variance in the original dataset.
