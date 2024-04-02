@@ -169,7 +169,7 @@ I chose 0.05 because it is the most common threshold for hypothesis tests.
 **p-value**: 0.0071(top), 0.0000(jg),  0.4776(mid), 0.0009(adc), 0.2218(sup)
 
 
-**Conclusion**: We reject the null hypothesis for Top, Jg, and Adc. We don't believe average number of bans for these roles for winning teams come from the same distribution as losing teams. We fail to reject the null hypothesis for Mid and Sup.
+**Conclusion**: I reject the null hypothesis for Top, Jg, and Adc. I don't believe average number of bans for these roles for winning teams come from the same distribution as losing teams. I fail to reject the null hypothesis for Mid and Sup.
 
 
 <iframe
