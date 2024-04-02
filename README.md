@@ -281,8 +281,7 @@ CBLOL is a smaller region known for their unconventional picks. We'd like to fin
 
 **p-value**: 0.0004
 
-We reject the null hypothesis. 
-
+I reject the null hypothesis. The hypothesis does not indicate that the performance of the model on CBLOL functions as well as on the rest of the leagues. Although CBLOL is known for unconventional picks, some further analysis could be on the performance of the model on smaller leagues, to see if the model is still generalizable. 
 
 
 
