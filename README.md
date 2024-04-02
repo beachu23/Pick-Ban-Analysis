@@ -255,7 +255,7 @@ However, I found that Support Vector Classification(SVC) gave me a better result
 
 Permutation Test
 
-CBLOL is a smaller region known for their unconventional picks. We'd like to find out if our model is fair for them.
+CBLOL is a smaller region known for their unconventional picks. I'd like to find out if our model is fair for them.
 
 
 **Group X**: CBLOL games
